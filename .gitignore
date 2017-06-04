@@ -1,0 +1,4 @@
+mac_sim.app
+data/
+weights/
+.DS_Store
