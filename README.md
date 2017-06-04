@@ -52,7 +52,7 @@ As per the NVidia documentation, my model consists of the following layers:
 | **Dense** | ouput: 10, activation: Elu, L2: 0.0000001 |
 | **Dense** | ouput: 1 |
 
-A dropout layer was added after the final convolution layer in order to add some noise in the fully connect layers. Also, L2 regularization was added to the fully connected layers to penalizer higher weigths. These two methods were used in order to reduce overfitting, however removing them did not decrese the learning performance overall with the current dataset.
+A dropout layer was added after the final convolution layer in order to add some noise in the fully connect layers. Also, L2 regularization was added to the fully connected layers to penalize higher weigths. These two methods were used to reduce overfitting and kept with small values - dropout: 2 and l2: 0.0000001. Higher values had a undesirable effect of keeping high training and validation losses with the current dataset.
 
 The full implementation of the NVidia model can be found in `model.py`
 
