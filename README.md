@@ -45,11 +45,11 @@ As per the NVidia documentation, my model consists of the following layers:
 | **Convolution 5x5**      | depth: 48, border: valid, subsample: 2x2, activation: Elu    |
 | **Convolution 3x3**      | depth: 64, border: valid, subsample: 2x2, activation: Elu    |
 | **Convolution 3x3**      | depth: 64, border: valid, subsample: 2x2, activation: Elu    |
+| **Dropout**      | keep_prob: 0.2  |
 | Flatten   |   |
-| **Dense** | ouput: 1164, activation: Elu |
-| **Dense** | ouput: 100, activation: Elu |
-| **Dense** | ouput: 50, activation: Elu |
-| **Dense** | ouput: 10, activation: Elu |
+| **Dense** | ouput: 100, activation: Elu, L2: 0.0000001 |
+| **Dense** | ouput: 50, activation: Elu, L2: 0.0000001 |
+| **Dense** | ouput: 10, activation: Elu, L2: 0.0000001 |
 | **Dense** | ouput: 1 |
 
 
@@ -74,7 +74,9 @@ A total number of [**39600**](https://drive.google.com/open?id=0BwpbZUTOeyiIdGxP
 
 #### Training Strategy:
 
-The model was training for 100 epochs with a batch size of 32 and 2640 samples per epochs (train data divided by 12). These numbers achieved a good balance of tranining speed and accuracy. Training and validation losses were 96 and 91. 
+The model was training for 100 epochs with a batch size of 32 and 2640 samples per epochs (train data divided by 12). These numbers achieved a good balance of tranining speed and accuracy. Bellow is the graph showing traing and validation loss: 
+
+![alt text](./examples/loss.jpeg)
 
 The final data was split into training a valid sets for cross validation during training.
 
