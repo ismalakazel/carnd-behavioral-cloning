@@ -76,7 +76,7 @@ A total number of [**39600**](https://drive.google.com/open?id=0BwpbZUTOeyiIdGxP
 
 The model was training for 100 epochs with a batch size of 32 and 2640 samples per epochs (train data divided by 12). These numbers achieved a good balance of tranining speed and accuracy. Bellow is the graph showing traing and validation loss: 
 
-![alt text](./examples/loss.jpeg)
+![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/loss.png)
 
 The final data was split into training a valid sets for cross validation during training.
 
@@ -87,18 +87,18 @@ Note: The same preprocessing step needs to be applied to the images in the simul
 example of original and preprocessed images:
 
 original image
-![alt text](./examples/original.jpeg)
+![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/original.jpg)
 pre-processed image
-![alt text](./examples/preprocessed.jpeg)
+![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/preprocessed.jpg)
 
 In order to reduce overfitting, data augmentation was applied to the training dataset by randomly shifting the image in horizontal and vertical directions, and changing the brighteness to simulate day an night conditions. This data augmentation flow is based on NVidia's own flow, which involves shifting and rotating the images randomly.
 
 shiftted image
-![alt text](./examples/translated.jpeg)
+![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/translated.jpg)
 brightness change (afternoon)
-![alt text](./examples/afternoon.jpeg)
+![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/afternoon.jpg)
 brightness change (night)
-![alt text](./examples/night.jpeg)
+![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/night.jpg)
 
 Section 3 and 5.2 in the [NVidia paper](NVidia paper "NVidia paper") explains how they went about collecting and augmenting data to train the model.
 
