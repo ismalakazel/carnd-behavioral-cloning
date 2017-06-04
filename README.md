@@ -106,7 +106,7 @@ Section 3 and 5.2 in the [NVidia paper](NVidia paper "NVidia paper") explains ho
 
 #### Result:
 
-[Track one](https://www.youtube.com/watch?v=yPswtGSkGLQ)
+[Track one](https://www.youtube.com/watch?v=pyyxUs0q1pI)
 
 #### Future Work:
 
