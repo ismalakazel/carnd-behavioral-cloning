@@ -52,6 +52,7 @@ As per the NVidia documentation, my model consists of the following layers:
 | **Dense** | ouput: 10, activation: Elu, L2: 0.0000001 |
 | **Dense** | ouput: 1 |
 
+A dropout layer was added after the final convolution layer in order to add some noise in the fully connect layers. Also, L2 regularization was added to the fully connected layers to penalizer higher weigths. These two methods were used in order to reduce overfitting, however removing them did not decrese the learning performance overall with the current dataset.
 
 The full implementation of the NVidia model can be found in `model.py`
 
@@ -74,13 +75,13 @@ A total number of [**39600**](https://drive.google.com/open?id=0BwpbZUTOeyiIdGxP
 
 #### Training Strategy:
 
-The model was training for 100 epochs with a batch size of 32 and 2640 samples per epochs (train data divided by 12). These numbers achieved a good balance of tranining speed and accuracy. Bellow is the graph showing traing and validation loss: 
+The model was training for 100 epochs with a batch size of 32 and 2640 samples per epoch (train data divided by 12). These numbers achieved a good balance of tranining speed and accuracy. Bellow is the graph showing traing and validation loss: 
 
 ![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/loss.png)
 
-The final data was split into training a valid sets for cross validation during training.
+In the graph above the training stopped around the 50th epoch due to Keras early stopping callback, which has patience set to 5. Though, it's possible to achieve better results by removing or increasing the patience.
 
-Before feeding the images to the model a preprossing step was included in order to crop unnecessary features of the image and resize it to the NVidia model input shape specification. The simulator is `Height: 160, Width: 320 and 3 Channels`. After preprocessing each image had shape `Height: 66, Width: 200 and 3 Channels`. 
+Before feeding the images to the model a preprocessing step was included in order to crop unnecessary features of the image and resize it to the NVidia model input shape specification. The simulator is `Height: 160, Width: 320 and 3 Channels`. After preprocessing each image had shape `Height: 66, Width: 200 and 3 Channels`. 
 
 Note: The same preprocessing step needs to be applied to the images in the simulator autonomous mode. This can be done in `drive.py`
 
@@ -106,4 +107,8 @@ Section 3 and 5.2 in the [NVidia paper](NVidia paper "NVidia paper") explains ho
 #### Result:
 
 [Track one](https://www.youtube.com/watch?v=yPswtGSkGLQ)
+
+#### Future Work:
+
+Test the model on track two.
 
