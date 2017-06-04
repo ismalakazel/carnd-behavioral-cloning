@@ -47,7 +47,7 @@ As per the NVidia documentation, my model consists of the following layers:
 | **Convolution 3x3**      | depth: 64, border: valid, subsample: 2x2, activation: Elu    |
 | **Dropout**      | keep_prob: 0.2  |
 | Flatten   |   |
-| **Dense** | ouput: 100, activation: Elu, L2: 0.0000001 |
+| **Dense** | ouput: 100, activation: Elu, L2: 0.000001 |
 | **Dense** | ouput: 50, activation: Elu, L2: 0.0000001 |
 | **Dense** | ouput: 10, activation: Elu, L2: 0.0000001 |
 | **Dense** | ouput: 1 |
@@ -86,18 +86,18 @@ Note: The same preprocessing step needs to be applied to the images in the simul
 
 example of original and preprocessed images:
 
-original image
+###### original image
 ![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/original.jpg)
-pre-processed image
+###### pre-processed image
 ![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/preprocessed.jpg)
 
 In order to reduce overfitting, data augmentation was applied to the training dataset by randomly shifting the image in horizontal and vertical directions, and changing the brighteness to simulate day an night conditions. This data augmentation flow is based on NVidia's own flow, which involves shifting and rotating the images randomly.
 
-shiftted image
+###### shiftted image
 ![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/translated.jpg)
-brightness change (afternoon)
+###### brightness change (afternoon)
 ![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/afternoon.jpg)
-brightness change (night)
+###### brightness change (night)
 ![alt text](https://github.com/ismalakazel/carnd-behavioral-cloning/blob/master/examples/night.jpg)
 
 Section 3 and 5.2 in the [NVidia paper](NVidia paper "NVidia paper") explains how they went about collecting and augmenting data to train the model.
